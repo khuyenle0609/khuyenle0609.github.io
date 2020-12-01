@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>{{ page.title }}</title>
+	<meta name="description" content="{{ page.description }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="author" content="Khuyen Le">
+	<link rel="stylesheet" href="assets/css/styles.css?v={{ site.version }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+{{ content }}
+</body>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+			$(".fade").each(function() {
+				/* Check the location of each desired element */
+				var objectLine = $(this).offset().top + 100;
+				/* If the element is completely within bounds of the window, fade it in */
+				if (objectLine < windowBottom) { //object comes into view (scrolling down)
+					$(this).fadeTo(500,1);
+				}
+			});
+        });
+    });
+</script>
+</html>

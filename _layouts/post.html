@@ -1,0 +1,30 @@
+---
+layout: default
+---
+<div class="topnav" style="display: none">
+	<div class="sitename"><a href="/">Khuyen Le</a></div>
+	<div class="nav__link1"><a class="navlinka" href="index.html" >Home</a></div>
+	<div class="nav__link2"><a class="navlinka" href="resume.html" >About</a></div>	
+</div>
+
+{{ content }}
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $(window).scroll(function() {
+            let width = $(window).width();
+            let navHeight = 1000;
+            if (width <= 375) {
+                navHeight = 600;
+            } else if (width <= 1024) {
+                navHeight = 800;
+            }
+            let nowScrollTop = $(this).scrollTop();
+            if (nowScrollTop < navHeight) {
+                $('.topnav').fadeOut(500);;
+            } else {
+                $('.topnav').fadeIn(800);
+            }
+        });
+    });
+</script>
