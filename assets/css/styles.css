@@ -142,7 +142,7 @@ body {
 	margin-top: 24px;
 }
 
-.post-img:hover {
+.post-img img:hover {
 	opacity: 0.7;
 }
 .footer {
